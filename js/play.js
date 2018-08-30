@@ -58,9 +58,9 @@ function checkWins(oWin, xWin) {
 $(".box").hover(function () {
     if ($(this).hasClass("box-filled-1") == false && $(this).hasClass("box-filled-2") == false) {
         if ($("#player1").hasClass("active")) {
-            $(this).css("background-image", "url('/img/o.svg')")
+            $(this).css("background-image", "url('img/o.svg')")
         } else if ($("#player2").hasClass("active")) {
-            $(this).css("background-image", "url('/img/x.svg')")
+            $(this).css("background-image", "url('img/x.svg')")
         }
     }
 
