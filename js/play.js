@@ -2,10 +2,6 @@ $("#player1").addClass("active");
 let oBoxes = [];
 let xBoxes = [];
 
-/*
-Gör en function som man ska calla varje gång någon clickar (efter resten av koden)
-som checkar oBoxes och xBoxes om dom har nummer i sig som är en vinst. 
-*/
 let winConditions = [
     [0, 1, 2],
     [3, 4, 5],
