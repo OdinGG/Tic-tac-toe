@@ -1,4 +1,7 @@
 $("#player1").addClass("active");
+const finishScreen = $('#finish');
+const board = $('#board');
+
 let oBoxes = [];
 let xBoxes = [];
 
@@ -13,24 +16,27 @@ let winConditions = [
     [2, 4, 6]
 ];
 
+finishScreen.hide();
+
+
 function checkWins(oWin, xWin) {
     if (oBoxes.length == 5) {
-        $('body').load('html_snippets/win.txt', function () {
-            $('#finish').addClass('screen-win-tie');
-            $('.message').text("It's a Tie!");
-            $('.button').attr("href", "board.html");
-        });
+        $('#finish').addClass('screen-win-tie');
+        $('.message').text("It's a Tie!");
+        $('.button').attr("href", "board.html");
+        finishScreen.show();
+        board.hide();
     }
     for (let u = 0, oPoints = 0, xPoints = 0; u < winConditions.length; u++, oPoints = 0, xPoints = 0) {
         for (let i = 0; i < oWin.length; i++) {
             if ($.inArray(oWin[i], winConditions[u]) != -1) {
                 oPoints++;
                 if (oPoints == 3) {
-                    $('body').load('html_snippets/win.txt', function () {
-                        $('#finish').addClass('screen-win-one');
-                        $('.message').text('Winner');
-                        $('.button').attr("href", "board.html");
-                    });
+                    $('#finish').addClass('screen-win-one');
+                    $('.message').text('Winner');
+                    $('.button').attr("href", "board.html");
+                    finishScreen.show();
+                    board.hide();
                 }
             }
         }
@@ -42,6 +48,8 @@ function checkWins(oWin, xWin) {
                         $('#finish').addClass('screen-win-two');
                         $('.message').text('Winner');
                         $('.button').attr("href", "board.html");
+                        finishScreen.show();
+                        board.hide();
                     });
                 }
             }
