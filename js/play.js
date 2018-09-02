@@ -44,13 +44,11 @@ function checkWins(oWin, xWin) {
             if ($.inArray(xWin[i], winConditions[u]) != -1) {
                 xPoints++;
                 if (xPoints == 3) {
-                    $('body').load('html_snippets/win.txt', function () {
-                        $('#finish').addClass('screen-win-two');
+                                            $('#finish').addClass('screen-win-two');
                         $('.message').text('Winner');
                         $('.button').attr("href", "board.html");
                         finishScreen.show();
                         board.hide();
-                    });
                 }
             }
         }
